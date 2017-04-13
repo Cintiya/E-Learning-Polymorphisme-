@@ -1,0 +1,91 @@
+public class Handphone{  // super kelas handphone
+    String merk; // attribut  dengan tipe data string
+    int harga;  // attribut dengan tipe data integer
+
+public Handphone(){ // konstruktor
+        this.merk="Merk Handphone ";
+        this.harga=0;
+    }
+    public Handphone(String c, int n ){  //parameter
+        this.merk = c;
+        this.harga = n;
+    }    
+ //panggil method setMerk pada class Handphone, dan masukkan 1 parameter berisi "String c"
+    public void setMerk(String c){
+        this.merk=c;
+    }
+//panggil method setHarga pada class Handphone, dan masukkan 1 parameter berisi "Integer n"
+    public void setHarga(int n){
+        this.harga = n;        
+    }
+//masukkan nilai yang dikembalikan dari method getMerk pada class Handphone
+    public String getMerk(){ 
+        return this.merk;
+    }
+//masukkan nilai yang dikembalikan dari method getHarga pada class Handphone
+    public int getHarga(){ 
+        return this.harga;
+    }    
+    public void sms(){ // fungsi handphone
+        System.out.println("Handphone untuk SMS");        
+    }
+    public void tlp(){  // fungsi handphone
+        System.out.println("Handphone untuk Tlp");        
+    }
+    public void selfie(){  //fungsi handphone
+        System.out.println("Handphone untuk Selfie");        
+    }
+	public void tampilkan(){ //menampilkan nama kelas
+	System.out.println("Kelas Handphone");
+	}
+}
+
+//overriding
+public class Samsung extends Handphone{ // sub kelas dari super kelas handphone 
+	
+	String merk; //attribut dengan tipe data string
+	
+	public static void main (String[] args){ // main program
+		Samsung smg = new Samsung();//membuat objek
+		smg.Handphone();
+		Handphone hp = new Handphone();
+        hp.setMerk("Samsung"); 
+        hp.setHarga(3000000);        
+        System.out.println("Merk Handphone   : "+hp.getMerk());// tampilkan merk handphone dari setmerk
+        System.out.println("Harga Handphone  : "+hp.getHarga());// tampilkan harga handphone dari setharga
+	}
+
+	public void Handphone(){ 
+	
+		super.tampilkan();//panggil method tampilkan pada super kelas handphone
+		super.sms();	// panggil method sms pada super kelas handphone
+		super.tlp();	// panggil method tlp pada super kelas handphone
+		super.selfie(); // panggil method selfie pada super kelas handphone
+	}
+}
+
+
+//overriding
+public class Asus extends Handphone{ //sub kelas dari super kelas handphone 
+
+	String merk; //attribut dengan tipe data string
+	
+	public static void main (String[] args){ //main program
+		Asus ass = new Asus();//membuat objek
+		ass.Handphone();
+		Handphone hp = new Handphone();
+        hp.setMerk("Asus");
+        hp.setHarga(2500000);        
+        System.out.println("Merk Handphone  : "+hp.getMerk()); // tampilkan merk handphone dari setmerk
+        System.out.println("Harga Handphone : "+hp.getHarga()); // tampilkan harga handphone dari setharga
+    }
+
+        public void Handphone(){
+
+		super.tampilkan();//panggil method tampilkan pada super kelas handphone
+		super.sms();	// panggil method sms pada super kelas handphone
+		super.tlp();	// panggil method tlp pada super kelas handphone
+		super.selfie(); // panggil method selfie pada super kelas handphone
+	}
+}
+
